@@ -1,10 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
-"""
-class task_new(models.Model):
-    _name = 'task_new.task_new'
-"""
 
 class HR(models.Model):
     _name = 'task_new.task_new'
