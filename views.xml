@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record  id="task_new_list" model="ir.ui.view">
+      <field name="name">task_new list</field>
+      <field name="model">task_new.task_new</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="employee_id"/>
+          <field name="department_id"/>
+        </tree>
+      </field>
+    </record>
+    
+    
+    
+    <!--FORM VIEW FOR MAIN CLASS-->
+
+    <record id="employee_form_view" model="ir.ui.view">
+        <field name="model">task_new.task_new</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="HR">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="employee_id"/>
+                        </group>
+                        <group>
+                            <field name="department_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <!--ACTION VIEW FOR MASTER OF EMPLOYEE CLASS-->
+
+<!--       <record model="ir.ui.view" id="task_new_list1">
+      <field name="name">emp_emp list1</field>
+      <field name="model">emp.emp</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="department"/>
+        </tree>
+      
+      </field>
+    </record> -->
+
+    <!--ACTION VIEW FOR MASTER OF DEPARTMENT CLASS-->
+
+  <!--   <record model="ir.ui.view" id="task_new_list2">
+      <field name="name">emp_dept list2</field>
+      <field name="model">emp.dept</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record> -->
+      
+
+
+
+
+    
+    
+    <record model="ir.actions.act_window" id="task_new_action_window">
+      <field name="name">Employee Details</field>
+      <field name="res_model">task_new.task_new</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+
+   
+    
+
+    
+
+    
+    
+    <menuitem name="task_new" id="task_new_menu_root"/>
+    
+        
+    <menuitem name="EMPLOYEE INFO" id="task_new_menu_1" parent="task_new_menu_root"/>
+    
+    
+    
+    <menuitem name="DEPARTMENT DETAILS" id="task_new_menu_1_list" parent="task_new_menu_1"
+              action="task_new_action_window"/>
+
+    
+  </data>
+</odoo>
